@@ -8,13 +8,58 @@ export function useAvailableProducts() {
   return useQuery<AvailableProduct[], AxiosError>(
     "available-products",
     async () => {
-      const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.bff}/product/available`
-      );
+      const res = await axios
+        .get<AvailableProduct[]>(`${API_PATHS.bff}/product/available/fail`)
+        .catch((error) => {
+          console.error(
+            "Error during load products, enablinng mock data",
+            error
+          );
+          return {
+            data: [
+              {
+                description: "Sports Wear",
+                id: "3214",
+                price: 24,
+                title: "Sports Wear",
+                count: 1,
+              },
+              {
+                description: "Boxes",
+                id: "2134",
+                price: 15,
+                title: "Set of Boxes",
+                count: 2,
+              },
+              {
+                description: "Golf Club",
+                id: "2306",
+                price: 23,
+                title: "Golf Club",
+                count: 3,
+              },
+              {
+                description: "Hair Shampoo",
+                id: "2289",
+                price: 15,
+                title: "Hair Shampoo",
+                count: 4,
+              },
+              {
+                description: "Camera",
+                id: "1243",
+                price: 23,
+                title: "Camera",
+                count: 5,
+              },
+            ] as AvailableProduct[],
+          };
+    })
       return res.data;
     }
   );
 }
+
 
 export function useInvalidateAvailableProducts() {
   const queryClient = useQueryClient();
