@@ -2,61 +2,22 @@ import axios, { AxiosError } from "axios";
 import { AvailableProduct } from "~/models/Product";
 import { useQuery, useQueryClient, useMutation } from "react-query";
 import React from "react";
+import { response } from "msw";
+import { availableProducts } from "~/mocks/data";
+//import { response } from "msw";
 
 export function useAvailableProducts() {
   const API_PATH = "https://koyvk9ichi.execute-api.eu-west-1.amazonaws.com/dev/";
   return useQuery<AvailableProduct[], AxiosError>(
     "available-products",
     async () => {
-      const res = await axios
+      const res  = await axios
         .get<AvailableProduct[]>(`${API_PATH}/products`)
-        .catch((error) => {
-          console.error(
-            "Error during load products, enablinng mock data",
-            error
-          );
-          return {
-            data: [
-              {
-                description: "Sports Wear",
-                id: "3214",
-                price: 24,
-                title: "Sports Wear",
-                count: 1,
-              },
-              {
-                description: "Boxes",
-                id: "2134",
-                price: 15,
-                title: "Set of Boxes",
-                count: 2,
-              },
-              {
-                description: "Golf Club",
-                id: "2306",
-                price: 23,
-                title: "Golf Club",
-                count: 3,
-              },
-              {
-                description: "Hair Shampoo",
-                id: "2289",
-                price: 15,
-                title: "Hair Shampoo",
-                count: 4,
-              },
-              {
-                description: "Camera",
-                id: "1243",
-                price: 23,
-                title: "Camera",
-                count: 5,
-              },
-            ] as AvailableProduct[],
-          };
-    })
-      return res.data;
+        
+         return res.data;
+         
     }
+    
   );
 }
 

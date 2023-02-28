@@ -5,6 +5,7 @@ import API_PATHS from "~/constants/apiPaths";
 import { CartItem } from "~/models/CartItem";
 
 export function useCart() {
+  const API_PATH = "https://koyvk9ichi.execute-api.eu-west-1.amazonaws.com/dev/";
   return useQuery<CartItem[], AxiosError>("cart", async () => {
     const res = await axios.get<CartItem[]>(`${API_PATHS.cart}/profile/cart`, {
       headers: {
