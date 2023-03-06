@@ -12,7 +12,7 @@ provider:
 
 functions:
   productsList:
-    handler: productsList.getProductsList
+    handler: getProducts
     events:
       - http: 
           path: products
@@ -24,6 +24,20 @@ functions:
       - http:
           path: products/{productId}
           method: get
+          cors: true
+  deleteProduct:
+    handler: deleteProduct
+    events:
+      - http: 
+          path: products/{prodcutId}
+          method: get
+          cors: true
+  deleteProduct:
+    handler: putProduct
+    events:
+      - http: 
+          path: createProduct
+          method: post
           cors: true
 
 custom:

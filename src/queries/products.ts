@@ -13,13 +13,21 @@ export function useAvailableProducts() {
     async () => {
       const res  = await axios
         .get<AvailableProduct[]>(`${API_PATH}/products`)
-        
-         return res.data;
+        .catch((error) => {
+          console.error(
+            "Error during load products, enablinng mock data",
+            error
+          );
+          return { data: availableProducts };
          
-    }
+         
+    })
     
-  );
-}
+  
+  return res.data;
+    });
+  }
+
 
 
 export function useInvalidateAvailableProducts() {

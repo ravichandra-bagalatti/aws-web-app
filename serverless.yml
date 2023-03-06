@@ -28,10 +28,6 @@ custom:
   serverless-s3-cleaner:
     buckets:
       - ${self:custom.client.bucketName}
-  s3BucketName: ${self:custom.client.bucketName}
-functions:
-  function1:
-    handler: index.handler
 
 resources:
   Resources:
