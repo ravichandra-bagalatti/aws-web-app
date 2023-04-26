@@ -6,6 +6,9 @@ provider:
   name: aws
   runtime: nodejs14.x
   region: eu-west-1
+  environment:
+    BUCKET_NAME: ravispainaws
+    PRODUCT_TABLE: Products 
   # setup profile for AWS CLI.
   # profile: node-aws
 
@@ -19,7 +22,7 @@ plugins:
 
 custom:
   client:
-    bucketName: ravispainaws
+    bucketName: ${env:BUCKET_NAME}
     distributionFolder: dist
   s3BucketName: ${self:custom.client.bucketName}
 
