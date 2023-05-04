@@ -1,0 +1,46 @@
+  {
+    "products": [
+        {
+            "id": "19ba3d6a-f8ed-491b-a192-0a33b71b38c1",
+            "title": "Product Title",
+            "description": "This product1",
+            "price": 100
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a2",
+            "title": "Product Title2",
+            "description": "This product3",
+            "price": 20
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a3",
+            "title": "Product Title3",
+            "description": "This product3",
+            "price": 50
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73c48a80a4",
+            "title": "Product Title4",
+            "description": "This product4",
+            "price": 210
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73348a80a5",
+            "title": "Product Title5",
+            "description": "This product5",
+            "price": 11
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73348a80a6",
+            "title": "Product Title6",
+            "description": "This product6",
+            "price": 23
+          },
+          {
+            "id": "7567ec4b-b10c-48c5-9345-fc73348a80a7",
+            "title": "Product Title7",
+            "description": "This product7",
+            "price": 15
+          }
+    ]
+  }
